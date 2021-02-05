@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>BingoSync Tools</title>
+		<style>
+			input[type=text], input[type=number] {
+				background-color: #272b30;
+				color: white;
+				border: #bbb solid 1px;
+				padding: 5px;
+			}
+		</style>
+	</head>
+	<body style="font-size: 18px; color: white; background-color: #272b30">
+		<h2>Bookmark Tools</h2>
+		To use the following tools, drag the link into your bookmarks bar and click on it once you are inside an active Bingosync tab.<br>
+		Accessibility Highlighting Tool (By Acamaeda and Cirion): <a href='javascript:!function(){let e={1:"#6F0000",2:"#168A84",3:"#8D4F12",4:"#AE2691",5:"#207E10",6:"#676767",7:"#521F92",8:"#929006"},r={Hearts:8,Berries:1,"Blue Hearts":2,"Blue Heart":2,Blue:2,Cassettes:3,Cassette:3,"B-Sides":4,"B-Side":4,"Red Hearts":4,"Red Heart":4,Collectibles:5,Binoculars:6,Binocular:6,"A-Sides":7};function l(l){for(word in tileHTML=l.innerHTML,r)"Hearts"!=word?tileHTML=tileHTML.replace(word,`<span style = "background: ${e[r[word]]};">${word}</span>`):tileHTML.includes("Red Hearts")||tileHTML.includes("Blue Hearts")||(tileHTML=tileHTML.replace(word,`<span style = "background: ${e[r[word]]};">${word}</span>`));l.innerHTML=tileHTML}let t=document.getElementById("bingo").children[0];for(x=1;x<6;x++){let e=t.children[x];for(y=1;y<6;y++){l(e.children[y].children[2])}}}();'>Highlight Keywords</a><br><br>
+		Colored Stars Tool (By SkLz): <a href='' id="colorstarslink">Add Colored Stars</a><br>
+		To use the tool above, you need to specify the colors you want to use below.<br>
+		The bookmark link will be automatically regenerated to have your colors.<br>		
+		Number of colors: <input type="number" min=1 max=10 value=1 onchange="createInputs(this.value)">
+		<div id="inputs">
+			<input type="text" data=0 onchange="setcolor(this)" style="width:90%"
+				value='["rgb(173, 255, 255)", "saturate(200%) brightness(100%) hue-rotate(0deg)"]'>
+		</div>
+		<br><br>
+		<br><h2>Color Picker For Colored Stars Tool</h2>
+		Adjust the below sliders till you get a color you'd like to use.<br>
+		Hue rotation:
+		<input type="range" min=0 max=360 step=2 value=0 id="hue" onchange="preview()"> <span id="huetxt"></span><br>
+		Saturation:
+		<input type="range" min=0 max=400 step=1 value=200 id="sat" onchange="preview()"> <span id="sattxt"></span><br>
+		Brightness:
+		<input type="range" min=0 max=180 step=1 value=100 id="brt" onchange="preview()"> <span id="brttxt"></span><br>
+		Preview: <span id="prev">Text preview</span><br><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAABmJLR0QAzADMAMzfwV8aAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4QMOBRoq2+6eggAABFxJREFUWMPNWEtsG1UUPe892zPjfByiOKQkShWpCCieRakQggWIFQgh0k0BFRGxoOoOqQsWATRRLcQC9kREgFSxaQRCKV2gskBiCbvoWYHApBIRSKGJWsd2bU/sN5dFPGZq/I1fmt6dbfnqzDn3nHtt4D4vpqEHHUJPrUWLrju5vLn5bA0s6WzONfWZi3F+2ZHyQd1Pz3XIWyU6PRCJHJ+Kx79oIfvRMbi0sXH+4cHBlw3OWdIwXnKkvKgTJO+XPc/3X7SEMABAMMYBvK9T6r4YXHTdpx6IxU4Fr4ejUZxMJMYAXLgvACqisw+Z5kw4X+JCAMBbumTm/chLwIxg7K7cM4VA0jSPO1LaR8pgYI7G9w3Occw0BYBlHSxyHeZorBjnADCuwyxchzkaS6dZIgeRoNEczRZ8D2ZhnY4FWnTdqaFo9BkA4ybnNoARwVjKEqKVREOt5A3PQa5SoRjnWQAKQLmk1O+K6A8AtxXR969NT//UCXQA8L2ZgYEFAJwzJiL7zmSC6T1MFBGqRASAfKI9AEUAfu2B/s5VKu+EQLP6DN4sl3fcQiECIGpwzgVj2sHVNg0MzpnBObeEMC0hRi0hxggYW81mH/0tl3u10VgcABZSqaVtz/t4LZfztz3vnt5qRaWwms2iWK1GFFEKwNPhueUBlZdSqfndSuXD9Xze3ywWDx2YIsK25wXgAEDUwL3pSPlYMwcRADhSviEY+2zcNAdPDg8fCriSUnALBexWKvCUCt7eA3AlbdtzYbOwZiHsSPk4Y2x5wjRTukEGkpaUwr5fQACyAK6FwLF2GVTPrIVM5vqEab6gC2Ro3upKA1gF8E3atj9qhol1WmkLmcyVpGG8fmJwENZ++OoCtwfgGoAP0rb9ays8nbIkAPl50jDethMJneD+N28H2cUMACYt67sJ07zTz29bRdQKHGtHVFfHguf7s6Ox2MBBAZpC4JGhoVbgtFwzI/1sFvbfCbbTC7huAJLmCEw6Up7Veg8ubWy8MmVZz3ezFdpVjHMYQkQBzGsF6Pn+bCIaHW3n0F9u3cJ6Po+1XK6bOYz0erB2krfp/AXRAaAeH1vlMlWJ2DHTRNIwWs3hWKh/fyZZdN0pg/OpRjn/LBbruRbONiK6vuN5P6zn89SGzZ7msBPdc9Px+JONrHlKNeZaBkAmcKgj5ZmtcvmrklJDScPAdDx+1xx6Ss1rmcEq0WlLCF5SCmu5XJ21GjgfwF+1XHsivBXStr1CRCeye3srNwoFP2DzIHMY6eDO7LbnwS0UUFKKiIiFWPsRwFLatr9tdrqlbfufGpvPbZXLV3crlZFENIpJy+ppDtseC5cymdkI5596So0CsGrXhwvg5272aDhHHSk/YYxdtISIFKvVCoBzadv+uhPAthIvpFJXPaXOAfgSwG0AKwDOdLtHw5+nbftdIjpVrFZvALjTax62ixpypJxxpJwP/cVLB+1V65dypLzcTR/WZeNev3Mv+x1t/QsrvBNXRiUT6gAAAABJRU5ErkJggg==" id="star"><br>
+		Value: <span id="copy"></span>
+		<script>
+			function createInputs(count) {
+				count = Number(count);
+				if (colors.length >= count) colors = colors.slice(0, count);
+				else colors = [...colors, ...(new Array(count - colors.length).fill(defaultColor))];
+				console.log(colors);
+				colorInputs.innerHTML = colors.map((color, i) => colorInputTemplate.replace(/xx/g, color).replace(/yy/g, i)).join("<br>");
+			}
+			
+			function setcolor(input) {
+				colors[Number(input.getAttribute("data"))] = input.value;
+				updateLink();
+			}
+			
+			function updateLink() {
+				colorstarslink.setAttribute("href", coloredStarsTemplate.replace(/colorssssssssss/g, colors.join(",")));
+			}
+		
+			function wrapAroundHue(val) {
+				while (val < 0 || val > 359) {
+					if (val > 0) val -= 360; else val += 360;
+				}
+				return val;
+			}
+			function applyFilter(hueRotation, saturationMultiplier, brightnessMultiplier) {
+			hueRotation = Number(hueRotation);
+			saturationMultiplier = Number(saturationMultiplier);
+			brightnessMultiplier = Number(brightnessMultiplier);
+				return [
+					wrapAroundHue(hueRotation + 180),
+					50 * (saturationMultiplier / 100),
+					84 * (brightnessMultiplier / 100)
+				];
+			}
+			
+			const defaultColor = '["rgb(173, 255, 255)", "saturate(200%) brightness(100%) hue-rotate(0deg)"]';
+			var colors = [defaultColor];
+			const texts = ["huetxt", "sattxt", "brttxt"].map(id => document.getElementById(id));
+			const sliders = ["hue", "sat", "brt"].map(id => document.getElementById(id));
+			const star = document.getElementById("star");
+			const prev = document.getElementById("prev");
+			const colorstarslink = document.getElementById("colorstarslink");
+			const colorInputs = document.getElementById("inputs");
+			const colorInputTemplate = '<input type="text" data=yy onchange="setcolor(this)" style="width:90%" value=\'xx\'>';
+			const filter = "saturate(yy%) brightness(zz%) hue-rotate(xxdeg)";
+			
+			function preview() {
+				let values = (sliders.map(slider => slider.value));
+				star.style.filter = filter.replace(/xx/g, values[0])
+					.replace(/yy/g, values[1])
+					.replace(/zz/g, values[2]);
+				let viewValues = applyFilter(values[0], values[1], values[2]);
+				texts.forEach((txt, i) => {
+					txt.innerHTML = values[i] + ((i == 0) ? " deg" : "%");
+				});
+				viewValues[0] += "deg";
+				viewValues[1] += "%";
+				viewValues[2] += "%";
+				prev.style.color = "HSL(" + viewValues.join(", ") + ")";
+				copy.innerText = '["' + prev.style.color + '", "' + star.style.filter + '"]';
+			}
+			
+			const coloredStarsTemplate = 'javascript:const colors = [colorssssssssss];var colorSlider = "<div style=\'position: fixed; top: calc(50% - " + colors.length * 20 + "px); left: 5px;\'></div>";function activateSquare(el) {selectedColor = el.getAttribute("data");let cur = $(".chosen");cur.css("border", "none");cur.removeClass("chosen");$(el).addClass("chosen");$(el).css("border", "black solid 2px");}const colorSquare = "<div style=\'width: 20px; height: 20px; background-color: zzzzz\' data=\'zzzzz\' onclick=\'activateSquare(this);\'></div>";const colorSquareActive = "<div style=\'width: 20px; height: 20px; background-color: zzzzz; border: black solid 2px;\' class=\'chosen\' data=\'yyyyy\' onclick=\'activateSquare(this);\'></div>";var colorSliderElem = document.body.appendChild($(colorSlider).get(0));var selectedColor = colors[0][1];function colorBlock(color){return(selectedColor == color[1] ? colorSquareActive : colorSquare).replace(/zzzzz/g, color[0]).replace(/yyyyy/g, color[1]);}colorSliderElem.innerHTML = colors.map(colorBlock).reduce((acc, cur) => {return acc + cur}, "");$("td.square").off("contextmenu");$("td.square").contextmenu(function(e){e.preventDefault();const cell = $(e.target.parentElement);const star = cell.find(".starred");star.toggleClass("hidden");const hasStar = !star.hasClass("hidden");star.css("filter", selectedColor);});';
+			
+			updateLink();
+		</script>
+	</body>
+</html>
