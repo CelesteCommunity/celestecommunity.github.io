@@ -9,9 +9,16 @@
 				border: #bbb solid 1px;
 				padding: 5px;
 			}
+			@font-face {
+				font-family: 'renogareregular';
+				src: url('renogare-regular-webfont.woff2') format('woff2'),
+					url('renogare-regular-webfont.woff') format('woff');
+				font-weight: normal;
+				font-style: normal;
+			}
 		</style>
 	</head>
-	<body style="font-size: 18px; color: white; background-color: #272b30">
+	<body style="font-family: 'renogareregular'; font-size: 18px; color: white; background-color: #272b30">
 		<h2>Bookmark Tools</h2>
 		To use the following tools, drag the link into your bookmarks bar and click on it once you are inside an active Bingosync tab.<br>
 		Accessibility Highlighting Tool (By Acamaeda and Cirion): <a href='javascript:!function(){let e={1:"#6F0000",2:"#168A84",3:"#8D4F12",4:"#AE2691",5:"#207E10",6:"#676767",7:"#521F92",8:"#929006"},r={Hearts:8,Berries:1,"Blue Hearts":2,"Blue Heart":2,Blue:2,Cassettes:3,Cassette:3,"B-Sides":4,"B-Side":4,"Red Hearts":4,"Red Heart":4,Collectibles:5,Binoculars:6,Binocular:6,"A-Sides":7};function l(l){for(word in tileHTML=l.innerHTML,r)"Hearts"!=word?tileHTML=tileHTML.replace(word,`<span style = "background: ${e[r[word]]};">${word}</span>`):tileHTML.includes("Red Hearts")||tileHTML.includes("Blue Hearts")||(tileHTML=tileHTML.replace(word,`<span style = "background: ${e[r[word]]};">${word}</span>`));l.innerHTML=tileHTML}let t=document.getElementById("bingo").children[0];for(x=1;x<6;x++){let e=t.children[x];for(y=1;y<6;y++){l(e.children[y].children[2])}}}();'>Highlight Keywords</a><br><br>
